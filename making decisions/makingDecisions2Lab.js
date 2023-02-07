@@ -1,5 +1,11 @@
+'use strict';
+
+const log = text => {
+  console.log(text);
+}
+
 // For problems 1-2 use the following lines of code:
-var arr = [10,20,30,40,50,60]
+var arr = [10, 20, 30, 40, 50, 60]
 
 ////////// PROBLEM 1 //////////
 /*
@@ -7,6 +13,9 @@ var arr = [10,20,30,40,50,60]
 */
 
 //Code Here
+log('PROBLEM 1')
+let firstItem = arr[0];
+log(firstItem);
 
 
 ////////// PROBLEM 2 //////////
@@ -15,6 +24,9 @@ var arr = [10,20,30,40,50,60]
 */
 
 //Code Here
+log('\nPROBLEM 2')
+let lastItemRemoved = arr.pop();
+log(lastItemRemoved);
 
 ////////// PROBLEM 3 //////////
 
@@ -27,13 +39,17 @@ var family = ['Tyler', 'Jordan', 'Ryan', 'Alice', 'Ireland'];
 */
 
 //Code Here
+log('\nPROBLEM 3')
+for (const name of family) {
+  log(name);
+}
 
 
 
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 let evensArr = []
 // Do not edit the code above.
 
@@ -42,6 +58,13 @@ let evensArr = []
 */
 
 //Code Here
+log('\nPROBLEM 4')
+for (const num of nums) {
+  if (num % 2 == 0) {
+    evensArr.push(num)
+  }
+}
+log(evensArr)
 
 
 
@@ -56,6 +79,14 @@ var score = 74
 */
 
 //Code Here
+log('\nPROBLEM 5')
+let grades = [[90, 80, 70, 60, 0], ['A', 'B', 'C', 'D', 'F']];
+for (const grade in grades[0]) {
+  if (score >= grades[0][grade]) {
+    log(grades[1][grade]);
+    break;
+  }
+}
 
 
 ////////// Intermediate Problems //////////
@@ -63,7 +94,7 @@ var score = 74
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var myFavoriteNumbers = [4,8,12,16,20,24];
+var myFavoriteNumbers = [4, 8, 12, 16, 20, 24];
 // Do not edit the code above.
 
 /*
@@ -71,6 +102,9 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 */
 
 //Code Here
+log('\nPROBLEM 6')
+let someNum = myFavoriteNumbers[4]
+log(someNum);
 
 
 ////////// PROBLEM 7 //////////
@@ -79,17 +113,29 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 // Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' to the console. If the length is more than 7, reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure that your code works for exactly 7 elements? What index do you use to get the 7th element?)
 
 //Code Here
-
+log('\nPROBLEM 7')
+if (myFavoriteNumbers.length < 7) {
+  log('There are not enough elements in this array');
+} else {
+  someNum = myFavoriteNumbers[6];
+}
+log(someNum);
 
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
-var listOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+var listOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Do not edit the code above.
 
 // Use a for-loop to iterate through 'listOfNumbers', checking to see if each number is divisible by 3. If it is, console.log '{number} is divisible by 3.'
 
 //Code Here
+log('\nPROBLEM 8')
+for (const num of listOfNumbers) {
+  if (num % 3 == 0) {
+    log(`${num} is divisible by 3`);
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -102,6 +148,10 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+log('\nPROBLEM 9')
+for (const letter in letters) {
+  log(letters[letters.length - 1 - letter]);
+}
 
 
 ////////// Advanced Problems //////////
@@ -124,7 +174,26 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
-
+log('\nPROBLEM 10')
+switch (letterGrade) {
+  case 'A':
+    log('The student is doing excellently.');
+    break;
+  case 'B':
+    log('The student is doing well.');
+    break;
+  case 'C':
+    log('The student is doing alright.');
+    break;
+  case 'D':
+    log('The student is not doing very well.');
+    break;
+  case 'F':
+    log('The student is failing.');
+    break;
+  default:
+    log('Not an eligible grade.');
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -152,3 +221,15 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
+log('\nPROBLEM 11')
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 == 0 && i % 5 == 0) {
+    log('Devmountain');
+  } else if (i % 3 == 0) {
+    log('Dev');
+  } else if (i % 5 == 0) {
+    log('Mountain');
+  } else {
+    log(i);
+  }
+}
