@@ -1,3 +1,5 @@
+"use strict";
+
 ////////// PROBLEM 1 //////////
 /*
   Create a variable called 'lovesCode' and set it equal to true. 
@@ -11,6 +13,7 @@ const log = text => {
 }
 
 //CODE HERE
+log('PROBLEM 1');
 const lovesCode = true
 
 if (lovesCode) {
@@ -32,6 +35,7 @@ var brittanisBirthYear = 1986;
 */
 
 //CODE HERE
+log('\nPROBLEM 2');
 if (amysAge > brittanisAge) {
   log('Amy is older');
 } else if (amysAge < brittanisAge) {
@@ -47,20 +51,22 @@ if (amysAge > brittanisAge) {
 */
 
 //CODE HERE
+log('\nPROBLEM 3');
+log('SOLUTION 1');
 // I loveeee the ternary operator!
 log((amysBirthYear == brittanisBirthYear ?
   'Amy and Brittani were born in the same year' :
   'Amy & Brittani were not born in the same year'
 ));
 
-// if statement version
-/*
+// OR
+log('SOLUTION 2');
 if (amysBirthYear == brittanisBirthYear) {
   log('Amy and Brittani were born in the same year')
 } else {
   log('Amy & Brittani were not born in the same year')
 }
-*/
+
 
 ////////// PROBLEM 4 //////////
 
@@ -73,6 +79,7 @@ let rain = true;
 */
 
 //CODE HERE
+log('\nPROBLEM 4');
 if (rain) {
   if (temperature >= 80) {
     log('It\'s hot and rainy, so you should wear a t-shirt and take an umbrella');
@@ -98,6 +105,10 @@ if (rain) {
 */
 
 //CODE HERE
+log('\nPROBLEM 5');
+for (let i = 0; i < 10; i++) {
+  log('hello');
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -106,6 +117,10 @@ if (rain) {
 */
 
 //CODE HERE
+log('\nPROBLEM 6');
+for (let i = 1; i <= 10; i++) {
+  log(i);
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -114,7 +129,18 @@ if (rain) {
 */
 
 //CODE HERE
+log('\nPROBLEM 7');
+log('SOLUTION 1');
+for (let i = 10; i >= 0; i--) {
+  log(i);
+}
 
+// OR
+
+log('SOLUTION 2');
+for (let i = 0; i <= 10; i++) {
+  log(10 - i);
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -126,6 +152,12 @@ let passingScore = 7;
 */
 
 //CODE HERE
+log('\nPROBLEM 8')
+while (score < passingScore) {
+  log('Your score is not high enough');
+  score++;
+}
+
 
 ////////// INTERMEDIATE PROBLEMS //////////
 
@@ -137,11 +169,23 @@ let passingScore = 7;
 */
 
 //CODE HERE
+log('\nPROBLEM 9');
+let changeMyMind = true;
+
+if (changeMyMind) {
+  changeMyMind = false;
+} else {
+  changeMyMind = true;
+}
+log(changeMyMind);
 
 ////////// PROBLEM 10 //////////
 // Using the "not" operator (!), change the current value of changeMyMind to true (it should currently be set to false due to the if-else statement in Problem 9). After you change the value of changeMyMind, console.log it's new value (it should now read true).
 
 //CODE HERE
+log('\nPROBLEM 10');
+changeMyMind = !changeMyMind;
+log(changeMyMind);
 
 ////////// ADVANCED PROBLEMS //////////
 
@@ -151,3 +195,10 @@ let z = 5;
 // Create a while loop that continues to run while z is greater than 0. Within the while loop, log a countdown from the value of z to 1. Once you have logged the countdown, make sure you decrement z by 1. If your code is running properly, you should see: 5,4,3,2,1,4,3,2,1,3,2,1,2,1,1.
 
 //CODE HERE
+log('\nPROBLEM 12');
+while (z > 0) {
+  for (let i = z; i > 0; i--) {
+    log(i)
+  }
+  z--
+}
