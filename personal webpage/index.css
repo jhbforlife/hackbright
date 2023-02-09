@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #edf2f4;
+    background-color: #2b2d42;
+    font-size: 125%;
+}
+
+div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile {
+    width: 12vw;
+    text-align: center;
+    margin: 25vh 10vw;
+}
+
+.profile-pic {
+    max-width: 12vmax;
+    border-radius: 50%;
+}
+
+.social-icon {
+    background-color: #edf2f4;
+    border-radius: 30%;
+    aspect-ratio: 1;
+    width: 50px;
+    margin: 4px;
+}
+
+.about {
+    width: 58vw;
+}
+
+@media screen and (max-width: 1550px) {
+    .social-icon {
+        margin: 4px 25%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        font-size: 2vmax;
+    }
+
+    div {
+        display: block;
+    }
+
+    .profile {
+        width: 100vw;
+        margin: auto;
+    }
+
+    .profile-pic {
+        margin-top: 100px;
+        max-width: 25%;
+        max-height: 25%;
+    }
+
+    .social-icon {
+        margin: 1%;
+        width: 8vw;
+    }
+
+    .about {
+        width: 80vw;
+        margin: auto 10vw;
+    }
+}
