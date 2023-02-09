@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+}
+
+.box {
+    border-color: black;
+    border-width: 6px;
+    height: 30vh;
+    width: 95vw;
+    margin: 2.5vh 2.5vw;
+    display: flex;
+}
+
+.top-box {
+    border-style: solid;
+    height: 25vh;
+}
+
+.small-rectangle {
+    position: relative;
+    background-color: rgb(138, 43, 226);
+    height: 60%;
+    width: 5%;
+    margin: 0 2.5%;
+    top: 35%;
+}
+
+.large-rectangle {
+    position: relative;
+    background-color: rgb(35, 139, 33);
+    height: 90%;
+    width: 35%;
+    margin: 0 2.5%;
+    top: 5%;
+}
+
+.large-circle {
+    position: relative;
+    background-color: rgb(136, 205, 235);
+    height: 90%;
+    aspect-ratio: 1;
+    margin: 0 2.5%;
+    top: 5%;
+    border-radius: 50%;
+}
+
+.middle-box {
+    border-style: dotted;
+}
+
+.yellow-rectangle {
+    position: relative;
+    background-color: rgb(255, 250, 205);
+    width: 90%;
+    height: 70%;
+    margin: 0 5%;
+    top: 15%;
+    box-shadow: 10px 10px 5px rgb(70, 70, 70);
+}
+
+.bottom-box {
+    height: 30vh;
+    width: 50vw;
+    margin: 2.5vh 25vw;
+    border-top: 1px solid rgb(211, 211, 211);
+    border-left: 1px solid rgb(211, 211, 211);
+    box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.5);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(2, 0, 128);
+    letter-spacing: .4rem;
+}
