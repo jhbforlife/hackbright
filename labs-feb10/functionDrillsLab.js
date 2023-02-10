@@ -13,6 +13,7 @@
 */
 
 //CODE HERE
+console.log('PROBLEM 1');
 function helloWorld() {
   console.log('Hello, World!');
 }
@@ -25,6 +26,7 @@ helloWorld();
 */
 
 //CODE HERE
+console.log('\nPROBLEM 2');
 const jsNinja = () => 'I am a JavaScript ninja!';
 console.log(jsNinja());
 
@@ -36,6 +38,7 @@ console.log(jsNinja());
 */
 
 //CODE HERE
+console.log('\nPROBLEM 3');
 const printName = (name) => {
   console.log(name);
 };
@@ -52,6 +55,7 @@ printName('Grogu');
 */
 
 //CODE HERE
+console.log('\nPROBLEM 4');
 const helloName = (name) => {
   console.log(`Hello, ${name}`);
 };
@@ -69,6 +73,7 @@ helloName('Count Dooku');
 */
 
 //CODE HERE
+console.log('\nPROBLEM 5');
 const compareNums = (x, y) => {
   return x >= y ? x : y; // I LOVE ternary operators
 };
@@ -83,6 +88,7 @@ console.log(compareNums(10, 24));
 */
 
 //CODE HERE
+console.log('\nPROBLEM 6');
 const add = (x, y) => Number(x) + Number(y);
 const sum = add(2, 2);
 console.log(sum);
@@ -94,6 +100,7 @@ console.log(sum);
   Uncomment the correct `console.log` underneath.
 */
 
+console.log('\nPROBLEM 7');
 const exclaim = function (str) {
   return str.toUpperCase() + '!!!'
 }
@@ -111,6 +118,7 @@ console.log('expression')
   Uncomment the correct `console.log` underneath.
 */
 
+console.log('\nPROBLEM 8');
 const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
@@ -136,6 +144,7 @@ console.log(exclaimThree('boom'));
   Uncomment the correct `console.log` underneath.
 */
 
+console.log('\nPROBLEM 9');
 function exclaimFour(str) {
   return str.toUpperCase() + '!!!'
 }
@@ -155,6 +164,7 @@ console.log('declaration')
 */
 
 //CODE HERE
+console.log('\nPROBLEM 10');
 const nameCheck = (name) => {
   if (!String(name).localeCompare('Steven')) {
     return 'What is up Steven?';
@@ -178,6 +188,7 @@ console.log(namedGreeting);
 */
 
 //CODE HERE
+console.log('\nPROBLEM 11');
 const faveColorFinder = (color) => {
   if (!String(color).localeCompare('red')) {
     return 'red is a great color';
@@ -201,6 +212,7 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+console.log('\nPROBLEM 12');
 const printAllNames = (names) => {
   for (const name of names) {
     console.log(name);
@@ -217,6 +229,7 @@ printAllNames(namesArr);
 */
 
 //CODE HERE
+console.log('\nPROBLEM 13');
 const thatsOdd = (number) => (number % 2 == 0) ? 'That\'s not odd' : 'That is odd indeed!';
 console.log(thatsOdd(23));
 
@@ -231,6 +244,7 @@ console.log(thatsOdd(23));
 */
 
 //CODE HERE
+console.log('\nPROBLEM 14');
 const bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`;
 console.log(bestMovie('Shrek 2'));
 
@@ -246,6 +260,7 @@ let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+console.log('\nPROBLEM 15');
 const bigOrSmall = (arr) => {
   const answers = [];
   for (const num of arr) {
@@ -261,6 +276,7 @@ const arrayEvaluator = bigOrSmall(bigOrSmallArray);
 console.log(arrayEvaluator);
 
 // Self declared bonus points
+console.log('\nBONUS');
 const mapBigOrSmall = (nums, sizes) => {
   const map = {};
   nums.forEach((key, i) => map[key] = sizes[i]);
@@ -276,6 +292,7 @@ let loser = 'Glimmer'
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
+console.log('\nPROBLEM 16');
 //CODE HERE
 const theEliminator = (contestants, loser) => {
   if (contestants.includes(loser)) {
@@ -293,6 +310,7 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+console.log('\nPROBLEM 17');
 const logUppercase = (str) => {
   console.log(str.toUpperCase());
 };
@@ -308,6 +326,7 @@ logUppercase(sampleString);
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+console.log('\nPROBLEM 18');
 const emailCheck = (email) => {
   email = String(email);
   email.trim();
@@ -326,6 +345,7 @@ console.log(emailCheck(' jacob.brown@shipt.com '));
 */
 
 //CODE HERE
+console.log('\nPROBLEM 19');
 const buyFrogsWith = (gold) => (gold - (gold % 3)) / 3;
 const totalFrogs = buyFrogsWith(92);
 console.log(totalFrogs);
@@ -336,7 +356,9 @@ console.log(totalFrogs);
 */
 
 //CODE HERE
-
+// I already built my function to remedy this problem :3
+console.log('\nPROBLEM 20');
+console.log('Already built for PROBLEM 19');
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9]
@@ -345,10 +367,22 @@ let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9]
 */
 
 //CODE HERE
-
+console.log('\nPROBLEM 21');
+const isAscending = (arr) => {
+  const sortedArr = [...arr];
+  sortedArr.sort((a, b) => a - b);
+  for (const num in arr) {
+    if (arr[num] != sortedArr[num]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isAscending(sampleArray));
 
 ////////////////// PROBLEM 22 ////////////////////
 
+console.log('\nPROBLEM 22');
 let duck = "cute";
 
 function bathroom() {
@@ -369,13 +403,17 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck'];
+console.log(globalScope);
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck'];
+console.log(bathroomScope);
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'rubberDuck', 'sailorDuc'];
+console.log(bathtubScope);
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck'];
+console.log(pondScope);
