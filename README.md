@@ -9,7 +9,7 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
     - personal-webpage [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/personal-webpage) | [netlify](https://ubiquitous-mooncake-0ba80c.netlify.app) ]
     - reactnative-layouts-challenge [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/reactnative-layouts-challenge) ]
         -   challenge-1 [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/reactnative-layouts-challenge/challenge-1) | [netlify](https://friendly-gaufre-a1a30b.netlify.app) ]
-        -   challeng-2 [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/reactnative-layouts-challenge/challenge-2) | [netlify](https://jade-bublanina-c2160d.netlify.app) ]
+        -   challenge-2 [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/reactnative-layouts-challenge/challenge-2) | [netlify](https://jade-bublanina-c2160d.netlify.app) ]
         -   challenge 3 [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/reactnative-layouts-challenge/challenge-3) | [netlify](https://coruscating-dango-9e72e3.netlify.app/) ]
 
 ## javascript
