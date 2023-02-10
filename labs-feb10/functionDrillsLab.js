@@ -1,3 +1,4 @@
+'use strict';
 /*
   Some of the following questions will ask you to use
   arrow function syntax. On the problems that don't,
@@ -12,7 +13,10 @@
 */
 
 //CODE HERE
-
+function helloWorld() {
+  console.log('Hello, World!');
+}
+helloWorld();
 
 ////////////////// PROBLEM 2 ////////////////////
 
@@ -21,7 +25,8 @@
 */
 
 //CODE HERE
-
+const jsNinja = () => 'I am a JavaScript ninja!';
+console.log(jsNinja());
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -31,7 +36,10 @@
 */
 
 //CODE HERE
-
+const printName = (name) => {
+  console.log(name);
+};
+printName('Grogu');
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -44,7 +52,10 @@
 */
 
 //CODE HERE
-
+const helloName = (name) => {
+  console.log(`Hello, ${name}`);
+};
+helloName('Count Dooku');
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -58,7 +69,10 @@
 */
 
 //CODE HERE
-
+const compareNums = (x, y) => {
+  return x >= y ? x : y; // I LOVE ternary operators
+};
+console.log(compareNums(10, 24));
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -69,22 +83,24 @@
 */
 
 //CODE HERE
+const add = (x, y) => Number(x) + Number(y);
+const sum = add(2, 2);
+console.log(sum);
 
-
-////////////////// PROBLEM 7 ////////////////////
+///////////////// PROBLEM 7 ////////////////////
 
 /*
   Which syntax was used to create the function below?
   Uncomment the correct `console.log` underneath.
 */
 
-const exclaim = function(str) {
+const exclaim = function (str) {
   return str.toUpperCase() + '!!!'
 }
 
 // console.log('arrow')
 // console.log('declaration')
-// console.log('expression')
+console.log('expression')
 
 
 
@@ -99,7 +115,7 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-// console.log('arrow')
+console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -109,7 +125,8 @@ const exclaimTwo = str => {
 
   Brownie points if you use a template string
 */
-
+const exclaimThree = (str) => `${str.toUpperCase()}!!!`;
+console.log(exclaimThree('boom'));
 
 
 ////////////////// PROBLEM 9 ////////////////////
@@ -124,7 +141,7 @@ function exclaimFour(str) {
 }
 
 // console.log('arrow')
-// console.log('declaration')
+console.log('declaration')
 // console.log('expression')
 
 
@@ -138,7 +155,17 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
-
+const nameCheck = (name) => {
+  if (!String(name).localeCompare('Steven')) {
+    return 'What is up Steven?';
+  } else if (!String(name).localeCompare('Bryan')) {
+    return 'Hey Bryan!';
+  } else {
+    return `Cool name, ${name}`;
+  }
+};
+const namedGreeting = nameCheck('bryan');
+console.log(namedGreeting);
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -151,7 +178,19 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
-
+const faveColorFinder = (color) => {
+  if (!String(color).localeCompare('red')) {
+    return 'red is a great color';
+  } else if (!String(color).localeCompare('green')) {
+    return 'green is a solid favorite color';
+  } else if (!String(color).localeCompare('black')) {
+    return 'so trendy';
+  } else {
+    return 'you need to evaluate your favorite color choice';
+  }
+};
+const colorRating = faveColorFinder("purple");
+console.log(colorRating);
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -162,7 +201,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const printAllNames = (names) => {
+  for (const name of names) {
+    console.log(name);
+  }
+};
+printAllNames(namesArr);
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -173,7 +217,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const thatsOdd = (number) => (number % 2 == 0) ? 'That\'s not odd' : 'That is odd indeed!';
+console.log(thatsOdd(23));
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -186,10 +231,11 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`;
+console.log(bestMovie('Shrek 2'));
 
 ////////////////// PROBLEM 15 ////////////////////
-let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107]
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -200,7 +246,27 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+const bigOrSmall = (arr) => {
+  const answers = [];
+  for (const num of arr) {
+    if (num > 100) {
+      answers.push('big');
+    } else {
+      answers.push('small');
+    }
+  }
+  return answers;
+};
+const arrayEvaluator = bigOrSmall(bigOrSmallArray);
+console.log(arrayEvaluator);
 
+// Self declared bonus points
+const mapBigOrSmall = (nums, sizes) => {
+  const map = {};
+  nums.forEach((key, i) => map[key] = sizes[i]);
+  return map;
+};
+console.log(mapBigOrSmall(bigOrSmallArray, arrayEvaluator));
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -211,7 +277,13 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+const theEliminator = (contestants, loser) => {
+  if (contestants.includes(loser)) {
+    contestants.splice(contestants.indexOf(loser), 1);
+  }
+  return contestants;
+};
+console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -221,7 +293,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+const logUppercase = (str) => {
+  console.log(str.toUpperCase());
+};
+logUppercase(sampleString);
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -233,6 +308,16 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+const emailCheck = (email) => {
+  email = String(email);
+  email.trim();
+  if (email.includes('@')) {
+    return 'email verified';
+  } else {
+    return 'must provide a valid email address';
+  }
+};
+console.log(emailCheck(' jacob.brown@shipt.com '));
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -241,7 +326,9 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+const buyFrogsWith = (gold) => (gold - (gold % 3)) / 3;
+const totalFrogs = buyFrogsWith(92);
+console.log(totalFrogs);
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -252,7 +339,7 @@ let sampleString = "Hi, my name is Kylo."
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
