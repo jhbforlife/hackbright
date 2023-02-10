@@ -18,7 +18,7 @@ body {
 
 .content-block {
     width: 100vw;
-    height: 400px;
+    min-height: 400px;
     display: flex;
 }
 
