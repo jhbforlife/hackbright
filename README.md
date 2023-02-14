@@ -16,3 +16,5 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 - week 1
     - labs-feb10 [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/labs-feb10) ]
     - making deceisions [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/making%20decisions) ]
+- week 2
+    - sharkwords [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/sharkwords) | [netlify](https://shimmering-praline-fb7c8b.netlify.app/sharkwords.html) ]
