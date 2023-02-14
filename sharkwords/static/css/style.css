@@ -57,10 +57,18 @@ button {
   height: 1.5em;
   font-size: 0.6em;
   background: white;
-  margin: 0 5px;
+  margin: 5px;
+  /* changed from 0 5px */
   cursor: pointer;
+  border-radius: 50%;
+  /* added */
 }
 
 button[disabled='true'] {
   cursor: default;
+}
+
+/* set for letters that weren't guessed */
+.remLet {
+  color: red;
 }

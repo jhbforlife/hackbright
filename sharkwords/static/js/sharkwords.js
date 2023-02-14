@@ -16,8 +16,7 @@ const WORDS = [
 
 // Variables to keep track of the state of the game
 let numWrong = 0;
-const word = Array.from("hello");
-// For now, we're hardcoing word. This makes it easier to manually test
+// For now, we're hardcoding word. This makes it easier to manually test
 // your code. You can change this to choose a random word from WORDS once you
 // finish this lab.
 
@@ -42,6 +41,7 @@ function generateLetterButtons() {
   for (const l of ALPHABET) {
     const newButton = document.createElement('button');
     newButton.innerText = l;
+    newButton.id = l;
     letterButtons.append(newButton);
   }
 }
@@ -79,19 +79,38 @@ function isAllLettersGuessed() {
 function endGame() {
   const playAgain = document.querySelector('#play-again');
   playAgain.style.display = 'block';
+  const letterButtons = document.querySelector('#letter-buttons').children;
+  for (const button of letterButtons) {
+    button.disabled = true;
+  }
+
+  const wordContainer = document.querySelector('#word-container').children;
+  for (const l of wordContainer) {
+    if (l.innerText === "") {
+      l.classList.add('remLet');
+      l.innerText = l.id;
+    }
+  }
+}
+
+function buttonAction(e) {
+
 }
 
 // An immediate invoked function expression (IIFE) used to kick off the game.
 (function startGame() {
-  generateDivsForChars(word);
+  const randomWord = WORDS[Math.floor(Math.random() * WORDS.length)];
+
+  generateDivsForChars(randomWord);
   generateLetterButtons();
 
   document.querySelectorAll("#letter-buttons button").forEach((button) => {
     button.addEventListener("click", (e) => {
+      console.log("clicked")
       const clickedButton = e.target;
       const letter = clickedButton.innerText;
 
-      if (!word.includes(letter)) {
+      if (!randomWord.includes(letter)) {
         handleIncorrectGuess();
       } else {
         handleCorrectGuess(letter);
@@ -110,5 +129,13 @@ function endGame() {
         endGame();
       }
     });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    const letterButtons = document.querySelector("#letter-buttons");
+    const button = letterButtons.children.namedItem(e.key);
+    if (button && !button.disabled) {
+      button.dispatchEvent(new Event('click'));
+    }
   });
 })();
