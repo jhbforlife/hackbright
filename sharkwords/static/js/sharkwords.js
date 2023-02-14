@@ -14,11 +14,7 @@ const WORDS = [
   "chocolate",
 ];
 
-// Variables to keep track of the state of the game
 let numWrong = 0;
-// For now, we're hardcoding word. This makes it easier to manually test
-// your code. You can change this to choose a random word from WORDS once you
-// finish this lab.
 
 // Generate a blank space for each letter in the word.
 // Correctly guessed letters will "fill in the blank" and appear in the spaces.
@@ -91,10 +87,6 @@ function endGame() {
       l.innerText = l.id;
     }
   }
-}
-
-function buttonAction(e) {
-
 }
 
 // An immediate invoked function expression (IIFE) used to kick off the game.
