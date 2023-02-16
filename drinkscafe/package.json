@@ -1,0 +1,24 @@
+{
+  "name": "drinkscafe",
+  "version": "1.0.0",
+  "description": "A virtual storefront for ordering drinks from a cafe.",
+  "main": "src/mockApi.js",
+  "scripts": {
+    "build": "esbuild src/mockApi.js --bundle --outdir=static --minify --loader:.webp=binary",
+    "dev": "esbuild src/mockApi.js --bundle --outdir=static --watch --servedir=. --loader:.webp=binary",
+    "start": "live-server"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "esbuild": "0.17.7",
+    "msw": "^1.0.1"
+  },
+  "msw": {
+    "workerDirectory": ""
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

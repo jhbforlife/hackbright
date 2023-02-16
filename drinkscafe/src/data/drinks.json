@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Handmade Wooden Keyboard Drink",
+    "imgURL": "/api/drinks/1/image",
+    "price": 4
+  },
+  {
+    "id": 2,
+    "name": "Modern Plastic Computer Tea",
+    "imgURL": "/api/drinks/2/image",
+    "price": 7
+  },
+  {
+    "id": 3,
+    "name": "Handcrafted Rubber Towels Smoothie",
+    "imgURL": "/api/drinks/3/image",
+    "price": 5
+  },
+  {
+    "id": 4,
+    "name": "Small Steel Cheese Drink",
+    "imgURL": "/api/drinks/4/image",
+    "price": 3
+  },
+  {
+    "id": 5,
+    "name": "Incredible Cotton Chicken Soda",
+    "imgURL": "/api/drinks/5/image",
+    "price": 4
+  },
+  {
+    "id": 6,
+    "name": "Modern Bronze Sausages Tea",
+    "imgURL": "/api/drinks/6/image",
+    "price": 5
+  }
+]
