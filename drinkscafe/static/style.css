@@ -1,0 +1,74 @@
+.layout main,
+.layout header,
+.drink {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.layout header {
+  margin: 1rem 0;
+  align-items: baseline;
+}
+
+.layout header h1,
+.layout header a {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.drink {
+  margin-bottom: 0.5rem;
+  width: 525px;
+}
+
+.drink-img {
+  width: 180px;
+  height: 180px;
+}
+
+.drink-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drink h1,
+.drink h2,
+.drink h3 {
+  margin-top: 0;
+}
+
+#cart tfoot,
+#cart thead {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+#cart td,
+#cart th {
+  padding: 0.25rem;
+}
+
+#cart table tr > td,
+#cart table tr > th {
+  width: 100px;
+  text-align: center;
+}
+
+#cart table tr > td:first-child,
+#cart table tr > th:first-child {
+  width: 400px;
+  text-align: left;
+}
+
+#cart table tr > td:nth-child(3),
+#cart table tr > th:nth-child(3),
+#cart table tfoot tr > td:last-child {
+  text-align: right;
+}
+
+#cart table tfoot tr > td:first-child {
+  text-align: left;
+}
