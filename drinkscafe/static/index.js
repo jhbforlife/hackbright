@@ -1,3 +1,4 @@
+'use strict';
 // fetch drinks
 const fetchDrinks = () => fetch('/api/drinks')
     .then((response) => response.json())
@@ -30,6 +31,7 @@ const displayDrinks = (drinks) => {
         drinkBodyButton.classList.add('add-to-cart');
         drinkBodyButton.innerText = 'Add to Cart';
         drinkBodyButton.id = drink.id;
+        drinkBodyButton.name = drink.name;
         drinkBodyButton.addEventListener('click', addDrinkToCart);
 
         // append child elements to parent
@@ -37,7 +39,7 @@ const displayDrinks = (drinks) => {
         drinkDiv.append(drinkImgDiv, drinkBodyDiv);
         menu.append(drinkDiv);
     }
-}
+};
 
 // add drink to cart
 const addDrinkToCart = (e) => {
@@ -46,9 +48,10 @@ const addDrinkToCart = (e) => {
         headers: { contentType: 'application/json' },
         body: JSON.stringify({ id: e.target.id, quantity: 1 })
     })
-        .then((response) => {
-            console.log(response);
+        .then(() => {
+            alert(`Added ${e.target.name} to cart!`);
         })
+        .catch((err) => { console.log(err) });
 };
 
 // fetch drinks when the page is loaded
