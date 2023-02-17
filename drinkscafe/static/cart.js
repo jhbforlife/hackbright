@@ -1,98 +1,101 @@
 'use strict';
-// fetch shopping cart
-const fetchCart = () => {
-    fetch('/api/cart')
-        .then((response) => response.json())
-        .then((cart) => { fetchCartDrinks(cart) })
-        .catch((err) => { console.log(err) });
-};
 
-// fetch each drink in the shopping cart
-// mock API calls return drinks with quantities of 0 or less
-// handled by checking item quantity before making call to fetch
-const fetchCartDrinks = (cart) => {
-    let actualDrinks = 0;
-    for (const item of cart) {
-        if (item.quantity > 0) {
-            actualDrinks++;
-            fetch(`/api/drinks/${item.id}`)
-                .then((response) => response.json())
-                .then((drink) => ({ drink: drink, quantity: item.quantity }))
-                .then((drinkWithQuantity) => displayCartDrink(drinkWithQuantity))
-                .then((priceOfQuantity) => { updateCartPrice(priceOfQuantity) })
-                .catch((err) => { console.log(err); });
-        }
+// table elements
+const tableBody = document.querySelector('#cart-table__body');
+const totalPrice = document.querySelector('#cart-table__foot__price');
+
+// fetch and display the cart on load
+(async () => {
+    try {
+        const resp = await fetch('/api/cart');
+        const cart = await resp.json();
+        loadCartDrinks(cart);
+    } catch (err) {
+        console.log(err);
     }
-    // if there are no drinks with an actual quantity to buy
-    // display 'Your cart is empty'
-    if (actualDrinks === 0) {
-        const tableBody = document.querySelector('#cart-table__body');
-        const newRow = document.createElement('tr');
-        const newTitle = document.createElement('td');
-        newTitle.innerText = 'Your cart is empty';
-        newRow.append(newTitle);
-        tableBody.append(newRow);
-    }
-};
+})();
 
-// display each drink when it is fetched
-const displayCartDrink = (drink) => {
-    const tableBody = document.querySelector('#cart-table__body');
+// fetch and display each drink in the cart
+const loadCartDrinks = (cart) => {
+    const filteredCart = cart.filter((drink) => drink.quantity > 0);
+    if (filteredCart.length <= 0) { loadCartIsEmpty(); return; }
 
-    const newRow = document.createElement('tr');
-    const newTitle = document.createElement('td');
-    newTitle.innerText = drink.drink.name;
+    filteredCart.forEach(async (idWithQuantity) => {
+        const drink = await fetchCartDrink(idWithQuantity);
+        const rowHTML = createRowHTML(drink);
+        insertRowHTML(rowHTML);
+        addRemoveListener(drink);
+        updateCartPrice(drink);
+    })
+}
 
-    const newQuantity = document.createElement('td');
-    newQuantity.innerText = drink.quantity;
+// display if there are no drinks in the cart
+const loadCartIsEmpty = () => {
+    const cartIsEmpty =
+        `<tr>
+            <td>Your cart is empty</td>
+        </tr>`
+    tableBody.insertAdjacentHTML('beforeend', cartIsEmpty);
+}
 
-    const newPrice = document.createElement('td');
-    const priceOfQuantity = (drink.drink.price * drink.quantity)
-    newPrice.innerText = `$${priceOfQuantity}`;
+// fetch each drink in the cart
+const fetchCartDrink = async (idWithQuantity) => {
+    const { id, quantity } = idWithQuantity;
+    const resp = await fetch(`/api/drinks/${id}`);
+    const drink = await resp.json();
+    drink.quantity = quantity;
+    return drink;
+}
 
-    const newButton = document.createElement('button');
-    newButton.innerText = 'Remove';
-    newButton.id = drink.drink.id;
-    newButton.name = drink.drink.name;
-    newButton.addEventListener('click', removeOneDrink);
+// create row for each drink in the cart
+const createRowHTML = (drink) => {
+    return (
+        `<div>
+            <tr drinkID=${drink.id}>
+                <td>${drink.name}</td>
+                <td>${drink.quantity}</td>
+                <td id="price">$${drink.quantity * drink.price}</td>
+                <td><button drink-id=${drink.id} drink-name="${drink.name}" drink-quantity=${drink.quantity}>x</button></td>
+            </tr>
+        </div>`)
+}
 
-    newRow.append(newTitle, newQuantity, newPrice, newButton);
-    tableBody.appendChild(newRow);
-    return priceOfQuantity;
-};
+// insert row into table for each drink in the cart
+const insertRowHTML = (rowHTML) => {
+    tableBody.insertAdjacentHTML('beforeend', rowHTML);
+}
+
+// add listener to each remove from cart button
+const addRemoveListener = (drink) => {
+    const removeButton = document.querySelector(`button[drink-id="${drink.id}"]`);
+    removeButton.addEventListener('click', removeFromCart);
+}
 
 // update shopping cart price each time drink is fetched
-const updateCartPrice = (price) => {
-    const tablePrice = document.querySelector('#cart-table__foot__price');
-    const currentPrice = Number.parseFloat(tablePrice.innerText.replace('$', ''));
-    tablePrice.innerText = `$${(currentPrice + price)}`;
+const updateCartPrice = (drink) => {
+    const currentPrice = Number.parseFloat(totalPrice.innerText.replace('$', ''));
+    totalPrice.innerText = `$${currentPrice + (drink.price * drink.quantity)}`;
 };
 
-// remove one drink from shopping cart
-const removeOneDrink = (e) => {
-    fetch('/api/cart/remove', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ id: e.target.id, quantity: 1 })
-    })
-        .then(() => {
-            alert(`Removed one ${e.target.name} from cart`);
-            resetUI();
-            fetchCart();
+// remove drink from cart and refetch / display the cart
+const removeFromCart = async (e) => {
+    try {
+        let resp = await fetch('/api/cart/remove', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ id: e.target.getAttribute('drink-id'), quantity: 1 })
         })
-        .catch((err) => { console.log(err); });
+        const cart = await resp.json();
+        alert(`Removed one ${e.target.getAttribute('drink-name')} from cart`);
+        resetCartTable();
+        loadCartDrinks(cart);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
-// reset table and price to reload after drink is removed
-const resetUI = () => {
-    const tableBody = document.querySelector('#cart-table__body');
-    const emptyBody = document.createElement('tbody');
-    emptyBody.id = 'cart-table__body';
-    tableBody.replaceWith(emptyBody);
-
-    const tablePrice = document.querySelector('#cart-table__foot__price');
-    tablePrice.innerText = '$0.00';
+// clear the table elements for reload
+const resetCartTable = () => {
+    tableBody.textContent = '';
+    totalPrice.innerText = '$0.00';
 }
-
-// load shopping cart when page is loaded
-fetchCart();
