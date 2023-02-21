@@ -16,3 +16,6 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 ## week 2
 - drinkscafe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/drinkscafe) | [netlify](https://effervescent-frangollo-5fc3a4.netlify.app/) ]
 - sharkwords [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/sharkwords) | [netlify](https://shimmering-praline-fb7c8b.netlify.app/sharkwords.html) ]
+
+## week 3
+- tradingcards [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tradingcards) | [netlify](https://graceful-custard-692284.netlify.app/) ]
