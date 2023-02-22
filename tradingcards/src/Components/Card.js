@@ -3,18 +3,18 @@ import CardImage from './CardImage.js';
 import CardDetails from './CardDetails.js';
 
 const Card = (props) => {
-    // All of the card data to use
+    // Card data being used
     const name = props.data['name']['name-USen'];
-    const imageURL = props.data['imageUri'];
-    const birthday = props.data['birthdayString'];
+    const imageURL = props.data['image_uri'];
+    const birthday = props.data['birthday-string'];
     const hobby = props.data['hobby']
-    const catchphrase = props.data['catchphrase'];
+    const catchphrase = props.data['catch-phrase'];
     const personality = props.data['personality'];
 
-    // Styling for the cards
+    // Styling for the whole card
     const cardStyle = {
-        backgroundColor: props.data['bubbleColor'],
-        color: props.data['textColor']
+        backgroundColor: props.data['bubble-color'],
+        color: props.data['text-color']
     };
 
     // Styling for the card details
