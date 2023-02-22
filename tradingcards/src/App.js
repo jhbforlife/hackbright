@@ -7,6 +7,7 @@ function App() {
 
   // State for fetching data from ACNH API
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // Fetches data from ACNH API
   useEffect(() => {
@@ -17,7 +18,10 @@ function App() {
       setData(cardData);
     };
 
-    getCardData();
+    getCardData()
+      .finally(() => {
+        setLoading(false);
+      })
   });
 
   // States for showing favorited cards
@@ -25,7 +29,7 @@ function App() {
   const [favoritesList, setFavoritesList] = useState([]);
 
   // If the data has been loaded
-  if (data) {
+  if (data && !loading) {
     // Loaded data from ACNH API
     const cardData = data;
 
