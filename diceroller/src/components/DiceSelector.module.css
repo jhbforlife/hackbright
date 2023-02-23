@@ -1,0 +1,18 @@
+.diceSelector {
+    display: flex;
+    justify-content: center;
+}
+
+.dice:hover {
+    transform: scale(1.2);
+}
+
+.diceSelected {
+    opacity: 0.5;
+}
+
+.roll {
+    width: 90px;
+    height: 30px;
+    margin-top: 10px;
+}

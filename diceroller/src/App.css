@@ -1,15 +1,17 @@
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
-.App-dice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 600px;
+.dice {
+  width: 80px;
+  aspect-ratio: 1;
+  margin: 5px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .dice {
+    width: 50px;
+  }
 }

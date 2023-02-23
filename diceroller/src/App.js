@@ -1,20 +1,11 @@
 import "./App.css";
-import Dice from "./components/Dice.js";
+import DiceRoller from "./components/DiceRoller";
 
 function App() {
   return (
     <div className="App">
-      <form>Add a dice</form>
-
-      <div>
-        <button>Roll all dice</button>
-      </div>
-
-      <div>
-        <Dice nSides={6} />
-        <Dice nSides={12} />
-        <Dice nSides={20} />
-      </div>
+      <h1>Dice Roller</h1>
+      <DiceRoller />
     </div>
   );
 }
