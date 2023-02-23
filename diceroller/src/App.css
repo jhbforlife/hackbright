@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.dice {
+  width: 80px;
+  aspect-ratio: 1;
+  margin: 5px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .dice {
+    width: 50px;
+  }
+}
