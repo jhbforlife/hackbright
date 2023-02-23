@@ -18,4 +18,5 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 - sharkwords [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/sharkwords) | [netlify](https://shimmering-praline-fb7c8b.netlify.app/sharkwords.html) ]
 
 ## week 3
+- diceroller [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/diceroller) | [netlify](https://gorgeous-phoenix-525f56.netlify.app/) ]
 - tradingcards [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tradingcards) | [netlify](https://graceful-custard-692284.netlify.app/) ]
