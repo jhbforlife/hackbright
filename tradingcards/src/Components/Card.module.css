@@ -1,6 +1,7 @@
 .card {
     width: 300px;
-    height: fit-content;
+    aspect-ratio: 3;
+    /* height: fit-content; */
     padding: 1rem;
     margin: 0.5rem 1rem;
     display: inline-block;
@@ -31,6 +32,10 @@
     font-weight: bold;
 }
 
+.cardDetails dd {
+    margin: 0;
+}
+
 .cardFavoriteIcon {
     font-size: 32px;
     margin-left: 10px;
@@ -42,4 +47,18 @@
 
 .cardFavoriteIcon:hover {
     transform: scale(1.2, 1.2);
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 160px;
+        height: 300px;
+        font-size: 50%;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .cardFavoriteIcon {
+        font-size: 17px;
+    }
 }
