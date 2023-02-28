@@ -1,5 +1,7 @@
-import HeadingText from "./HeadingText";
-import NavButton from "./NavButton";
+import { Box } from 'native-base';
+
+import HeadingText from './HeadingText';
+import NavButton from './NavButton';
 
 const SelectedView = (props) => {
   return (
@@ -8,9 +10,7 @@ const SelectedView = (props) => {
         <HeadingText title={props.title} size={props.titleSize} />
         <NavButton selectedView={props.title} />
       </Box>
-      <Box>
-        {props.body}
-      </Box>
+      <Box>{props.body}</Box>
     </Box>
   );
 };
