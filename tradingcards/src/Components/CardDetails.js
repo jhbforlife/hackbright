@@ -1,6 +1,6 @@
 const CardDetails = (props) => {
     return (
-        <dl className="card-details" style={props.style}>
+        <dl className={props.className}>
             <dt>Birthday</dt>
             <dd>{props.birthday}</dd>
             <dt>Hobby</dt>

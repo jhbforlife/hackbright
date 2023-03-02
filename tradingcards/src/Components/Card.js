@@ -1,9 +1,14 @@
+import { useEffect, useState } from 'react';
 import CardHeading from './CardHeading.js';
 import CardImage from './CardImage.js';
 import CardDetails from './CardDetails.js';
+import styles from './Card.module.css';
 
 const Card = (props) => {
-    // Card data being used
+    // State to update CardHeading favorite icon
+    const [favorite, setFavorite] = useState(false);
+
+    // Card data used
     const name = props.data['name']['name-USen'];
     const imageURL = props.data['image_uri'];
     const birthday = props.data['birthday-string'];
@@ -11,24 +16,25 @@ const Card = (props) => {
     const catchphrase = props.data['catch-phrase'];
     const personality = props.data['personality'];
 
-    // Styling for the whole card
+    // Dynamic styling for card
     const cardStyle = {
         backgroundColor: props.data['bubble-color'],
         color: props.data['text-color']
     };
 
-    // Styling for the card details
-    const cardDetailsStyle = {
-        backgroundColor: '#fefefe2b',
-        padding: '10px',
-        borderRadius: '0.8rem'
-    };
+    // Handler for clicking the favorite icon in CardHeading
+    // Toggle the favorite state and calls updateFavorites
+    // in Cards.js
+    const favoriteHandler = () => {
+        setFavorite(!favorite);
+        props.updateFavorites(name);
+    }
 
     return (
-        <div className="card" id={`card-${name}`} style={cardStyle}>
-            <CardHeading name={name} favoritesListState={props.favoritesListState} setShowFavorites={props.setShowFavorites} />
-            <CardImage imageURL={imageURL} name={name} />
-            <CardDetails birthday={birthday} hobby={hobby} catchphrase={catchphrase} personality={personality} style={cardDetailsStyle} />
+        <div className={styles.card} id={`card-${name}`} style={cardStyle}>
+            <CardHeading name={name} h1Class={styles.cardName} iconClass={`${styles.cardFavoriteIcon} ${!favorite ? styles.cardNotFavorite : ''}`} favoriteHandler={favoriteHandler} />
+            <CardImage className={styles.cardImage} imageURL={imageURL} name={name} />
+            <CardDetails className={styles.cardDetails} birthday={birthday} hobby={hobby} catchphrase={catchphrase} personality={personality} />
         </div>
     );
 }
