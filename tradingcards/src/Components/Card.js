@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CardHeading from './CardHeading.js';
 import CardImage from './CardImage.js';
 import CardDetails from './CardDetails.js';
