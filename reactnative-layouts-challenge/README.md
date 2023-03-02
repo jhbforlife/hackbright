@@ -3,15 +3,19 @@
 Continue practicing HTML and CSS skills by completing a series of layout challenges where you’ll recreate the layout of a webpage based on reference images.
 
 <br>
+<br>
 
 ## Set Up
 
-Unzip the downloaded file and open the project folder in VS Code. Notice that the project folder contains three subdirectories: challenge-1, challenge-2, and challenge-3. They contain starter code for the three challenges below.
+Unzip the downloaded file and open the project folder in VS Code. Notice that the project folder contains three subdirectories: **_challenge-1_**, **_challenge-2_**, and **_challenge-3_**. They contain starter code for the three challenges below.
 
-> ### <sub>IMPORTANT</sub> <br> Don’t forget to use Git!
+> ###### <sub>IMPORTANT</sub>
+>
+> ### Don’t forget to use Git!
 >
 > Remember to initialize a Git repo so you can push your code to GitHub.
 
+<br>
 <br>
 
 ## Instructions
@@ -52,4 +56,4 @@ Recreate the layouts by editing the HTML and CSS files in each challenge’s sub
 
 > ### <sub>IMPORTANT</sub> <br> Read this before you start
 >
-> This behavior isn’t pictured in the reference image but you should make sure that the ? button sticks to the bottom-right corner of the page for Challenge 3.
+> This behavior isn’t pictured in the reference image but **you should make sure that the `?` button sticks to the bottom-right corner of the page for Challenge 3**.
