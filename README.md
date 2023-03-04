@@ -22,5 +22,5 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 - tradingcards [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tradingcards) | [netlify](https://graceful-custard-692284.netlify.app/) ]
 
 ## week 4 - React Native
-- calculator [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/calculator) | [wip]() ]
+- calculator [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/calculator) | [wip] ]
 - tictactoe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tictactoe) | [netlify](https://main--comfy-cat-02e23d.netlify.app/) ]
