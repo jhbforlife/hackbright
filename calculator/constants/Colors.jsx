@@ -1,3 +1,4 @@
+// Colors used in the app
 const Colors = {
   background: '#131515',
   border: '#534B62',

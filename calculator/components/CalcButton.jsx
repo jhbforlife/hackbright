@@ -1,11 +1,16 @@
+// External
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+
+// Internal non-components
 import Colors from '../constants/Colors.jsx';
 
 const CalcButton = ({ onCalcBtnPress, text }) => {
+  // Called when a calculator button is pressed
   const onButtonPress = (button) => {
     onCalcBtnPress(button);
   };
 
+  // Bigger styles for 0 & clear
   const buttonStyle = [styles.button];
   switch (text) {
     case 0:
@@ -14,6 +19,8 @@ const CalcButton = ({ onCalcBtnPress, text }) => {
     case 'clear':
       buttonStyle.push(styles.triple);
       break;
+    default:
+      buttonStyle.push(styles.single);
   }
 
   return (
@@ -36,10 +43,10 @@ export default CalcButton;
 
 const styles = StyleSheet.create({
   button: {
-    width: '25%',
+    width: '23%',
     borderColor: Colors.border,
     borderWidth: 2,
-    borderRadius: 50,
+    borderRadius: '50%',
     backgroundColor: Colors.borderLowOpacity,
     overflow: 'hidden',
   },
@@ -47,11 +54,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  single: {
+    aspectRatio: 1,
+  },
   double: {
-    width: '50%',
+    width: '48%',
   },
   triple: {
-    width: '75%',
+    width: '73%',
   },
   buttonText: {
     color: Colors.text,
