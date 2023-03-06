@@ -1,0 +1,22 @@
+.Dice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.Dice-value {
+  box-sizing: border-box;
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
