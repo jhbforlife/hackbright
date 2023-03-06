@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Exercise: Dice Roller
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Practice working with state and handling events by adding features to the Dice Roller app.
 
-## Available Scripts
+<br>
+<br>
 
-In the project directory, you can run:
+## Getting started
 
-### `npm start`
+This exercise comes with starter code in a **\*_.zip_** file. Unzip the file where you normally store your React projects and open it in VS Code. Then, follow the steps below to install the dependencies and run the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In the VS Code terminal, run **_npm install_** to install the dependencies.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+$ npm install
+```
 
-### `npm test`
+When the dependencies are installed, run **_npm start_** to start the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ npm start
+```
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### An overview of the starter code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**_App.js_** renders placeholders for the final app’s UI and features. These features are missing — your assignment will be to implement them!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We’ve also included a **_Dice_** component in **_components/Dice.js_**. To see how it works, view the app in your browser. You should see three boxes with numbers. Try clicking on them and notice that the numbers change. Each box is rendered by a **_Dice_** component.
 
-### `npm run eject`
+<br>
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Your tasks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Add the following features to the Dice Roller app:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Users should be able to add dice to the app. They should be able to specify the number of sides on the dice that they want to add.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Currently, you can only roll each die individually. Add a feature so users can roll all the dice at once by clicking a button.
