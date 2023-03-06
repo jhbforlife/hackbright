@@ -54,6 +54,7 @@ Recreate the layouts by editing the HTML and CSS files in each challenge’s sub
         </tr>
 </table>
 
-> ### <sub>IMPORTANT</sub> <br> Read this before you start
+> ###### <sub>IMPORTANT</sub>
+> ### Read this before you start
 >
 > This behavior isn’t pictured in the reference image but **you should make sure that the `?` button sticks to the bottom-right corner of the page for Challenge 3**.
