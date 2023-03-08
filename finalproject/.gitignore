@@ -18,8 +18,3 @@ web-build/
 
 # Environment variables
 *.env
-
-# API Data
-recipes.json
-recipe.json
-searchResults.json
