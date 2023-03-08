@@ -1,11 +1,17 @@
+// External
 import { Skeleton, VStack, ZStack } from 'native-base';
+import { useWindowDimensions } from 'react-native';
 import { Dimensions } from 'react-native';
+
+// Internal components
 import RecipeDetailsBackBtn from './RecipeDetailsBackBtn';
 
+// Skeleton of RecipeDetails screen
 const RecipeDetailsSkeleton = () => {
-  const height = Dimensions.get('screen').height * 0.25;
-  const width = Dimensions.get('screen').width;
+  const { height, width } = useWindowDimensions();
+  const stackHeight = height * 0.25;
 
+  // Array of skeleton items to show
   const skeletonItems = [];
 
   for (let i = 0; i < 7; i++) {
@@ -14,8 +20,8 @@ const RecipeDetailsSkeleton = () => {
 
   return (
     <VStack space={5}>
-      <ZStack justifyContent='center' h={height} w={width}>
-        <Skeleton h={height} w={width} />
+      <ZStack justifyContent='center' h={stackHeight} w={width}>
+        <Skeleton h={stackHeight} w={width} />
         <RecipeDetailsBackBtn />
       </ZStack>
       {skeletonItems}

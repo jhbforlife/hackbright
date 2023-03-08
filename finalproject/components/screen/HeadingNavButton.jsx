@@ -1,14 +1,20 @@
-import { HamburgerIcon, Icon, Menu, Pressable } from 'native-base';
+// External
 import { AntDesign } from '@expo/vector-icons';
-import { useState } from 'react';
+import { HamburgerIcon, Icon, Menu, Pressable } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
+// Navigation button on Home & Search
 const HeadingNavButton = ({ screen }) => {
+  // Navigation management
   const navigation = useNavigation();
 
+  // Disable a menu item if it's the
+  // current screen being shown
   const isMain = screen === 'Main';
   const isSearch = screen === 'Search';
 
+  // Navigate to the pressed menu item's
+  // corresponding screen
   const navigateToScreen = (toScreen) => {
     navigation.navigate(toScreen);
   };

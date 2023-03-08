@@ -1,29 +1,39 @@
+// External
 import { Ionicons } from '@expo/vector-icons';
 import { Box, Icon, Input, VStack } from 'native-base';
 import { useEffect, useState } from 'react';
+import { Alert, useWindowDimensions } from 'react-native';
 
+// Internal non-components
 import { API_KEY } from '@env';
-import data from '../../searchResults.json';
-import { useWindowDimensions } from 'react-native';
 
+// Internal components
 import RecipeList from '../recipeList/RecipeList.jsx';
 
+// Body displayed in the Search screen's ScreenBox
 const SearchBody = () => {
+  // State management
   const [searchResults, setSearchResults] = useState('');
   const [searchSubmitted, setSearchSubmitted] = useState(false);
   const [searchTerm, setSearchTerm] = useState();
 
+  // Dimensions management
   const { height } = useWindowDimensions();
 
+  // Fetch search results when a non-empty
+  // search has been submitted
   useEffect(() => {
     const fetchSearch = async (term) => {
-      // const resp = await fetch(
-      //   `https://api.spoonacular.com/recipes/complexSearch?titleMatch=${term}&sort=popularity&number=10&apiKey=${API_KEY}`
-      // );
-      // const json = await resp.json();
-      // setSearchResults(json.results);
-      setSearchSubmitted(false);
-      setSearchResults(data.results);
+      try {
+        const resp = await fetch(
+          `https://api.spoonacular.com/recipes/complexSearch?query=${term}&sort=popularity&number=10&apiKey=${API_KEY}`
+        );
+        const json = await resp.json();
+        setSearchResults(json.results);
+        setSearchSubmitted(false);
+      } catch (error) {
+        Alert.alert('Error', error.message);
+      }
     };
     if (searchSubmitted) {
       searchTerm && searchTerm.trim().length !== 0
@@ -32,6 +42,9 @@ const SearchBody = () => {
     }
   }, [searchSubmitted, searchTerm]);
 
+  // Always shows search bar. If a search has been
+  // submitted, show the skeleton until the results
+  // have loaded.
   return (
     <VStack pb={'3/5'} space={5}>
       <Box alignSelf='center' h={height * 0.05} w='100%'>
@@ -44,6 +57,7 @@ const SearchBody = () => {
           py='1'
           px='2'
           size='2xl'
+          value={searchTerm}
           variant='rounded'
           width='100%'
           InputLeftElement={

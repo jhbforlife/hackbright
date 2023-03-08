@@ -1,28 +1,35 @@
+// External
 import { useEffect, useState } from 'react';
 
+// Internal non-components
 import { API_KEY } from '@env';
-import data from '../recipes.json';
 
+// Internal components
 import RecipeList from '../components/recipeList/RecipeList';
 import ScreenBox from '../components/screen/ScreenBox';
+import { Alert } from 'react-native';
 
+// Main screen
 const Main = () => {
+  // State management
   const [fetchedRecipes, setFetchedRecipes] = useState();
 
+  // Fetch random recipes on load
   useEffect(() => {
     const fetchRecipes = async () => {
-      // const resp = await fetch(
-      //   `https://api.spoonacular.com/recipes/complexSearch?number=10&apiKey=${API_KEY}`
-      // );
-      // const json = await resp.json();
-      // const recipes = json;
-      // recipes.results.sort((a, b) => a.title > b.title);
-      // setFetchedRecipes(recipes.results);
-      const recipes = data;
-      recipes.results.sort((a, b) => a.title.localeCompare(b.title));
-      setFetchedRecipes(recipes.results);
+      try {
+        const resp = await fetch(
+          `https://api.spoonacular.com/recipes/random?number=10&apiKey=${API_KEY}`
+        );
+        const json = await resp.json();
+        const recipes = json;
+        recipes.recipes.sort((a, b) => a.title.localeCompare(b.title));
+        setFetchedRecipes(recipes.recipes);
+      } catch (error) {
+        Alert.alert('Error', error.message);
+      }
     };
-    setTimeout(fetchRecipes, 2000);
+    fetchRecipes();
   }, []);
 
   return (

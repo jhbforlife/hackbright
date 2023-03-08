@@ -1,10 +1,15 @@
+// External
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
 import { HStack, Icon, Image, Pressable, Text } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 
+// Recipe list item where recipe lists are shown
 const RecipeListItem = ({ item }) => {
+  // Navigation management
   const navigation = useNavigation();
 
+  // When a recipe item is pressed, navigate
+  // to its corresponding RecipeDetails screen
   const onPressRecipeItem = () => {
     navigation.navigate('RecipeDetails', { item });
   };
@@ -14,9 +19,7 @@ const RecipeListItem = ({ item }) => {
       <HStack
         alignItems='center'
         bg='rgba(255,255,255,0.1)'
-        borderColor='blueGray.400'
-        borderRadius={10}
-        borderWidth={1}
+        borderRadius={20}
         mb={3}
         p={2}
         space={3}
@@ -33,13 +36,19 @@ const RecipeListItem = ({ item }) => {
           adjustsFontSizeToFit={true}
           color='text.200'
           noOfLines={3}
-          fontSize={22}
+          fontSize={18}
           fontWeight='semibold'
           w='60%'
         >
           {item.title}
         </Text>
-        <Icon as={Ionicons} name='chevron-forward' color='text.200' size={8} />
+        <Icon
+          as={Ionicons}
+          name='chevron-forward'
+          color='text.200'
+          ml={2}
+          size={6}
+        />
       </HStack>
     </Pressable>
   );

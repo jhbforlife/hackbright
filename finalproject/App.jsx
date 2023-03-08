@@ -1,11 +1,14 @@
-import { Box, NativeBaseProvider, StatusBar, Text } from 'native-base';
+// External
+import { NativeBaseProvider, StatusBar } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+// Internal screens
 import Main from './screens/Main.jsx';
-import Search from './screens/Search.jsx';
 import RecipeDetails from './screens/RecipeDetails.jsx';
+import Search from './screens/Search.jsx';
 
+// Stack navigator
 const Stack = createNativeStackNavigator();
 
 export default function App() {

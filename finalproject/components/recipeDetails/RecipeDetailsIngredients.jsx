@@ -1,5 +1,7 @@
+// Internal components
 import RecipeDetailsSection from './RecipeDetailsSection';
 
+// Ingredients section in RecipeDetails screen
 const RecipeDetailsIngredients = ({ ingredients }) => {
   const ingredientList = [];
 
