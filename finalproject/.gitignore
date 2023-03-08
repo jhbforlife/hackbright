@@ -22,3 +22,4 @@ web-build/
 # API Data
 recipes.json
 recipe.json
+searchResults.json

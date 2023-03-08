@@ -1,13 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { HStack, Icon, Image, Pressable, Text } from 'native-base';
-import data from '../../recipe.json';
 
-const RecipeItem = ({ item }) => {
+const RecipeListItem = ({ item }) => {
   const navigation = useNavigation();
 
   const onPressRecipeItem = () => {
-    navigation.navigate('Recipe', { item: data });
+    navigation.navigate('RecipeDetails', { item });
   };
 
   return (
@@ -46,4 +45,4 @@ const RecipeItem = ({ item }) => {
   );
 };
 
-export default RecipeItem;
+export default RecipeListItem;

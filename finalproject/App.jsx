@@ -1,10 +1,10 @@
-import { Box, NativeBaseProvider, Text } from 'native-base';
+import { Box, NativeBaseProvider, StatusBar, Text } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Main from './screens/Main.jsx';
 import Search from './screens/Search.jsx';
-import Recipe from './screens/Recipe.jsx';
+import RecipeDetails from './screens/RecipeDetails.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,14 +23,19 @@ export default function App() {
             component={Main}
             options={{ title: 'Recipes' }}
           />
-          <Stack.Screen name='Search' component={Search} />
           <Stack.Screen
-            name='Recipe'
-            component={Recipe}
+            name='Search'
+            component={Search}
+            options={{ gestureEnabled: false }}
+          />
+          <Stack.Screen
+            name='RecipeDetails'
+            component={RecipeDetails}
             options={{ animation: 'default' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
+      <StatusBar barStyle='light-content' />
     </NativeBaseProvider>
   );
 }
