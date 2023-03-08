@@ -32,3 +32,6 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 ## week 4 - React Native
 - calculator [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/calculator) | [wip] ]
 - tictactoe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tictactoe) | [netlify](https://main--comfy-cat-02e23d.netlify.app/) ]
+
+## week 5 - Final Project
+- finalproject [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/finalproject) ]
