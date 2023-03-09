@@ -15,9 +15,7 @@ import RecipeDetailsSkeleton from '../components/recipeDetails/RecipeDetailsSkel
 // Recipe details screen
 const RecipeDetails = ({ route }) => {
   // State management
-  const [image, setImage] = useState();
   const [recipeInfo, setRecipeInfo] = useState();
-  const [title, setTitle] = useState();
 
   // Fetch recipe details on load. All recipes will have
   // a title and image already fetched. If coming from Home screen
@@ -32,8 +30,6 @@ const RecipeDetails = ({ route }) => {
       setRecipeInfo(json);
     };
     const item = route.params.item;
-    setImage(item.image);
-    setTitle(item.title);
     if (
       item.servings &&
       item.readyInMinutes &&
@@ -51,7 +47,7 @@ const RecipeDetails = ({ route }) => {
   // Otherwise, show skeleton until loaded.
   return recipeInfo ? (
     <Box bg='text.200' flex={1} safeAreaBottom>
-      <RecipeDetailsHeading image={image} title={title} />
+      <RecipeDetailsHeading item={recipeInfo} />
       <ScrollView alwaysBounceVertical={false}>
         <RecipeDetailsInsight
           servings={recipeInfo.servings ? recipeInfo.servings : ''}

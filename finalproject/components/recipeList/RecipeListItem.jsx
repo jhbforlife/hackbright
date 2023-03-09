@@ -2,9 +2,10 @@
 import { Ionicons } from '@expo/vector-icons';
 import { HStack, Icon, Image, Pressable, Text } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
+import FavoritesIcon from '../favorites/FavoritesIcon';
 
 // Recipe list item where recipe lists are shown
-const RecipeListItem = ({ item }) => {
+const RecipeListItem = ({ item, setResetFavorites }) => {
   // Navigation management
   const navigation = useNavigation();
 
@@ -24,6 +25,7 @@ const RecipeListItem = ({ item }) => {
         p={2}
         space={3}
       >
+        <FavoritesIcon item={item} size={8} />
         <Image
           source={{
             uri: item.image,
@@ -38,17 +40,11 @@ const RecipeListItem = ({ item }) => {
           noOfLines={3}
           fontSize={18}
           fontWeight='semibold'
-          w='60%'
+          w='50%'
         >
           {item.title}
         </Text>
-        <Icon
-          as={Ionicons}
-          name='chevron-forward'
-          color='text.200'
-          ml={2}
-          size={6}
-        />
+        <Icon as={Ionicons} name='chevron-forward' color='text.200' size={6} />
       </HStack>
     </Pressable>
   );
