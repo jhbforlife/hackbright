@@ -30,8 +30,8 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 <br>
 
 ## week 4 - React Native
-- calculator [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/calculator) | [wip] ]
-- tictactoe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tictactoe) | [netlify](https://main--comfy-cat-02e23d.netlify.app/) ]
+- calculator [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/calculator) | [expo](https://expo.dev/@jhbforlife/calculator?serviceType=classic&distribution=expo-go) | [wip] ]
+- tictactoe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tictactoe) | [expo](https://expo.dev/@jhbforlife/tictactoe?serviceType=classic&distribution=expo-go) | [netlify](https://main--comfy-cat-02e23d.netlify.app/) ]
 
 ## week 5 - Final Project
-- finalproject [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/finalproject) | [wip] ]
+- finalproject [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/finalproject) | [expo](https://expo.dev/@jhbforlife/HB-Final?serviceType=classic&distribution=expo-go) | [wip] ]
