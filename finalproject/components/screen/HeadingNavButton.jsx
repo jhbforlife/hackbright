@@ -1,5 +1,5 @@
 // External
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { HamburgerIcon, Icon, Menu, Pressable } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,12 +11,13 @@ const HeadingNavButton = ({ screen }) => {
   // Disable a menu item if it's the
   // current screen being shown
   const isMain = screen === 'Main';
+  const isFavorites = screen === 'Favorites';
   const isSearch = screen === 'Search';
 
   // Navigate to the pressed menu item's
   // corresponding screen
   const navigateToScreen = (toScreen) => {
-    navigation.navigate(toScreen);
+    navigation.navigate(toScreen, { toScreen });
   };
 
   return (
@@ -37,6 +38,14 @@ const HeadingNavButton = ({ screen }) => {
       >
         <Icon as={AntDesign} name='home' size={6} />
         Home
+      </Menu.Item>
+      <Menu.Item
+        isDisabled={isFavorites}
+        onPress={navigateToScreen.bind(this, 'Favorites')}
+        _text={{ adjustsFontSizeToFit: true, fontSize: 24 }}
+      >
+        <Icon as={Ionicons} name='star-outline' size={6} />
+        Favorites
       </Menu.Item>
       <Menu.Item
         isDisabled={isSearch}

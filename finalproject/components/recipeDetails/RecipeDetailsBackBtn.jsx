@@ -1,6 +1,6 @@
 // External
 import { Ionicons } from '@expo/vector-icons';
-import { Box, Button, Icon } from 'native-base';
+import { Button, Icon } from 'native-base';
 import { useNavigation } from '@react-navigation/native';
 
 // Back button in RecipeDetails screen
@@ -15,20 +15,18 @@ const RecipeDetailsBackBtn = () => {
   };
 
   return (
-    <Box ml={5} safeArea>
-      <Button
-        borderRadius={50}
-        bg='text.200'
-        h={50}
-        onPress={onPressBackBtn}
-        w={50}
-        _pressed={{
-          bg: 'blueGray.400',
-        }}
-      >
-        <Icon as={Ionicons} color='blueGray.800' name='chevron-back' size={7} />
-      </Button>
-    </Box>
+    <Button
+      borderRadius={50}
+      bg='text.200'
+      ml={5}
+      onPress={onPressBackBtn}
+      size={12}
+      _pressed={{
+        bg: 'blueGray.400',
+      }}
+    >
+      <Icon as={Ionicons} color='blueGray.800' name='chevron-back' size={7} />
+    </Button>
   );
 };
 
