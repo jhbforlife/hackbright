@@ -20,14 +20,12 @@ const FavoritesBody = () => {
 
   // Set currentFavorites anytime it's navigated to
   useEffect(() => {
-    if (navigation === 1) {
-      const read = async () => await favorites.current.readFavorites();
-      read();
-      const list = favorites.current.list;
-      const values = Object.values(list);
-      values.sort((a, b) => a.title.localeCompare(b.title));
-      setCurrentFavorites(values);
-    }
+    const read = async () => await favorites.current.readFavorites();
+    read();
+    const list = favorites.current.list;
+    const values = Object.values(list);
+    values.sort((a, b) => a.title.localeCompare(b.title));
+    setCurrentFavorites(values);
   }, [navigation]);
 
   return currentFavorites && currentFavorites.length !== 0 ? (
