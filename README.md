@@ -1,6 +1,6 @@
 # hackbright
-welcome to the home of my work created during shipt + hackbright's mini frontend bootcamp.  
-topics discussed throughout the program include html, css, javascript, jsx, reactjs, react native, ajax, git, etc...    
+welcome to the home of my work created during the shipt + hackbright mini frontend bootcamp.  
+topics discussed throughout the program include html, css, javascript, jsx, reactjs, react native, ajax, node, express git, etc...    
 feel free to peruse my code, provide feedback, offer ideas, and create PRs if you're feeling generous :)
 
 <br>
@@ -34,4 +34,4 @@ feel free to peruse my code, provide feedback, offer ideas, and create PRs if yo
 - tictactoe [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/tictactoe) | [netlify](https://main--comfy-cat-02e23d.netlify.app/) ]
 
 ## week 5 - Final Project
-- finalproject [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/finalproject) ]
+- finalproject [ [repo](https://github.com/jhbatshipt/hackbright/tree/main/finalproject) | [wip] ]
