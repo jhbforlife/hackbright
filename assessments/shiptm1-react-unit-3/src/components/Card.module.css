@@ -1,0 +1,33 @@
+/* Imported styles from demo code */
+button {
+    padding: .5rem;
+    margin: 0 .5rem;
+    border-radius: 8px;
+    border: transparent;
+    background-color: #502D91;
+    color: #F7F4EA;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: cursive;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+h5 {
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+.card {
+    margin: 2rem 4rem;
+    padding: 1rem 5rem 2rem 5rem;
+    border: .5rem solid #241239;
+    border-radius: 4px;
+    background-color: #FEF2D1;
+    width: 50vw;
+}
