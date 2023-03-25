@@ -1,5 +1,6 @@
 // External
 import { useEffect, useState } from 'react';
+import { Alert } from 'react-native';
 
 // Internal non-components
 import { API_KEY } from '@env';
@@ -7,7 +8,6 @@ import { API_KEY } from '@env';
 // Internal components
 import RecipeList from '../components/recipeList/RecipeList';
 import ScreenBox from '../components/screen/ScreenBox';
-import { Alert } from 'react-native';
 
 // Main screen
 const Main = () => {

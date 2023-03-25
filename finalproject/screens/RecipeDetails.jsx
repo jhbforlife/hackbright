@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 // Internal non-components
 import { API_KEY } from '@env';
+import { useFavorites } from '../components/favorites/FavoritesProvider';
 
 // Internal components
 import RecipeDetailsHeading from '../components/recipeDetails/RecipeDetailsHeading';
@@ -16,6 +17,7 @@ import RecipeDetailsSkeleton from '../components/recipeDetails/RecipeDetailsSkel
 const RecipeDetails = ({ route }) => {
   // State management
   const [recipeInfo, setRecipeInfo] = useState();
+  const favorites = useFavorites();
 
   // Fetch recipe details on load. All recipes will have
   // a title and image already fetched. If coming from Home screen
@@ -37,7 +39,9 @@ const RecipeDetails = ({ route }) => {
       item.extendedIngredients &&
       item.instructions
     ) {
-      setRecipeInfo(route.params.item);
+      setRecipeInfo(item);
+    } else if (favorites.current.isFavorite(item.id)) {
+      setRecipeInfo(favorites.current.getFavorite(item.id));
     } else {
       fetchRecipeInfo();
     }

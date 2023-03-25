@@ -8,6 +8,11 @@ const favoritesPath = FileSystem.documentDirectory + 'favorites';
 
 // FavoritesContext wrapper
 const FavoritesProvider = ({ children }) => {
+  // Get a favorited item from its id
+  const getFavorite = (id) => {
+    return favorites.current.list[id];
+  };
+
   // Checks to see if a recipe id is currently favorited
   const isFavorite = (id) => {
     return Object.keys(favorites.current.list).includes(`${id}`);
@@ -40,6 +45,7 @@ const FavoritesProvider = ({ children }) => {
   // Context to share
   const favorites = useRef({
     list: {},
+    getFavorite: getFavorite,
     isFavorite: isFavorite,
     readFavorites: readFavorites,
     writeFavorites: writeFavorites,

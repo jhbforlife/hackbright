@@ -28,6 +28,9 @@ const FavoritesIcon = ({ item, size }) => {
   const onPressFavoriteIcon = async () => {
     await favorites.current.writeFavorites(item);
     setIsFavorite(favorites.current.isFavorite(item.id));
+    if (item.setUnfavorited) {
+      item.setUnfavorited((prev) => [...prev]);
+    }
   };
 
   return (
