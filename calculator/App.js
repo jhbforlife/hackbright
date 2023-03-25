@@ -2,6 +2,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { Gesture } from 'react-native-gesture-handler';
 
 // Internal non-components
 import Colors from './constants/Colors.jsx';
@@ -12,7 +13,7 @@ import ResultsView from './components/ResultsView.jsx';
 import CalcButton from './components/CalcButton.jsx';
 
 // 2D array of calculator buttons organized into rows
-const buttonRows = [['clear', '÷'], [7, 8, 9, 'x'], [4, 5, 6, '-'], [1, 2, 3, '+'], [0, '.', '=']]
+const buttonRows = [['clear', '÷'], ['7', '8', '9', 'x'], ['4', '5', '6', '-'], ['1', '2', '3', '+'], ['0', '.', '=']]
 
 export default function App() {
   // State management
@@ -37,14 +38,14 @@ export default function App() {
         if (operator === '') {
           setCalcDone(false);
           setOperator(btn);
-          setResultsState(prev => `${prev} ${btn} `)
+          setResultsState(`${firstNumber} ${btn} `)
           break;
         }
 
         // Change the operator if no secondNumber 
         if (secondNumber === '') {
           setOperator(btn);
-          setResultsState(prev => `${prev.slice(0, prev.length - 3)} ${btn} `)
+          setResultsState(`${firstNumber} ${btn} `);
           break;
         }
 
@@ -58,7 +59,7 @@ export default function App() {
             const result = Calculate(firstNumber, operator, secondNumber)
             // Set up a new calculation with firsNumber equal to the result
             // of the calculation above
-            setFirstNumber(result);
+            setFirstNumber(String(result));
             setSecondNumber('');
             // If btn is an operator instead of the equal sign, set up
             // operator for new calculation
@@ -96,7 +97,7 @@ export default function App() {
           }
           // If firstNumber is 0, & btn is 0, 
           // don't allow additional 0's
-          if (firstNumber.length === 1 && btn === 0 & firstNumber !== '.') { break; }
+          if (firstNumber.length === 1 && firstNumber === '0' && btn === '0') { break; }
           // If resultsState currently shows 0
           if (resultsState === '0') {
             // If btn is a dot, show 0btn, otherwise just show btn
@@ -124,7 +125,7 @@ export default function App() {
         // If operator is set, set btn to secondNumber
         // If secondNumber is 0, & btn is 0,
         // don't allow additional 0's.
-        if (secondNumber.length === 1 && btn === 0 && secondNumber !== '.') { break; }
+        if (secondNumber.length === 1 && secondNumber === '0' && btn === '0') { break; }
         // If resultsState currently shows 0 for secondNumber
         if (secondNumber === '0') {
           // If btn is a dot, show prevbtn, otherwise just show btn,
@@ -147,10 +148,42 @@ export default function App() {
     }
   };
 
+  // When the ResultsView is panned on
+  const onCalcResultsSwipe = Gesture.Pan().onEnd(() => {
+    if (secondNumber.length > 0) {
+      // If secondNumber has been set, remove the last number
+      // or reset it to a blank string
+      if (secondNumber.length === 1) {
+        setSecondNumber('');
+        setResultsState(`${firstNumber} ${operator}`);
+        return;
+      }
+      const poppedSecondNumber = secondNumber.slice(0, secondNumber.length - 1);
+      setSecondNumber(poppedSecondNumber);
+      setResultsState(`${firstNumber} ${operator} ${poppedSecondNumber}`)
+    } else if (operator.length > 0) {
+      // If secondNumber has been set, but operator has been set,
+      // reset the operator to a blank string
+      setOperator('');
+      setResultsState(`${firstNumber}`);
+    } else if (firstNumber.length > 0) {
+      // If only firstNumber has been set, remove the last number
+      // or reset it to a blank string
+      if (firstNumber.length === 1) {
+        setFirstNumber('');
+        setResultsState('');
+        return;
+      }
+      const poppedFirstNumber = firstNumber.slice(0, firstNumber.length - 1);
+      setFirstNumber(poppedFirstNumber);
+      setResultsState(`${poppedFirstNumber}`)
+    }
+  });
+
 
   return (
     <SafeAreaView style={styles.container}>
-      <ResultsView resultsState={resultsState} />
+      <ResultsView resultsState={resultsState} onCalcResultsSwipe={onCalcResultsSwipe} />
       <View style={styles.buttons}>
         {buttonRows.map((row, i) => {
           return <View key={i} style={styles.row}>{row.map(button => <CalcButton key={button} text={button} onCalcBtnPress={onCalcBtnPress} />)}</View>;

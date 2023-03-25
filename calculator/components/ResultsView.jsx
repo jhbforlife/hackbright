@@ -1,20 +1,23 @@
 // External
 import { StyleSheet, Text, View } from 'react-native';
+import { GestureDetector } from 'react-native-gesture-handler';
 
 // Internal non-components
 import Colors from '../constants/Colors.jsx';
 
-const ResultsView = ({ resultsState }) => {
+const ResultsView = ({ resultsState, onCalcResultsSwipe }) => {
   return (
-    <View style={styles.resultsView}>
-      <Text
-        style={styles.resultsText}
-        numberOfLines={1}
-        adjustsFontSizeToFit={true}
-      >
-        {resultsState}
-      </Text>
-    </View>
+    <GestureDetector gesture={onCalcResultsSwipe}>
+      <View style={styles.resultsView}>
+        <Text
+          style={styles.resultsText}
+          numberOfLines={1}
+          adjustsFontSizeToFit={true}
+        >
+          {resultsState}
+        </Text>
+      </View>
+    </GestureDetector>
   );
 };
 

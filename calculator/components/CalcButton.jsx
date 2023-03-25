@@ -13,7 +13,7 @@ const CalcButton = ({ onCalcBtnPress, text }) => {
   // Bigger styles for 0 & clear
   const buttonStyle = [styles.button];
   switch (text) {
-    case 0:
+    case '0':
       buttonStyle.push(styles.double);
       break;
     case 'clear':
