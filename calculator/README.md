@@ -1,15 +1,12 @@
 # Exercise: Calculator App
 
-Practice and experiment with React Native’s core components and style props by building the UI for a simple calculator app.
+[![Icon Attribute](https://img.shields.io/badge/App%20Icon-Math%20icons%20created%20by%20Good%20Ware%20--%20Flaticon-informational)](https://www.flaticon.com/free-icons/math)
 
-<br>
-<br>
+Practice and experiment with React Native’s core components and style props by building the UI for a simple calculator app.
 
 ## Overview
 
 Notice that a simple calculator doesn’t seem to have a ton of features. It only has basic arithmetic operations and no memory or other advanced functions. This is intentional. You already have a bunch of React experience (working with state, props, and handling events) — in this lab, we want you to focus on getting hands-on with React Native-specific skills.
-
-<br>
 
 ### What You’ll Build
 
@@ -22,9 +19,6 @@ Here are some ideas to try out:
 - Play with changing styles when the user long-presses a button
 - Use different fonts for the buttons and the display area
 - For inspiration: browse the reference docs for [View Style Props](https://reactnative.dev/docs/view-style-props), [Text Style Props](https://reactnative.dev/docs/text-style-props), and [Shadow Props](https://reactnative.dev/docs/shadow-props)
-
-<br>
-<br>
 
 ## Finished?
 
