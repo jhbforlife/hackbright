@@ -17,8 +17,10 @@ const FavoritesBody = () => {
   const [currentFavorites, setCurrentFavorites] = useState(
     favorites.current.list
   );
+  const [unfavorited, setUnfavorited] = useState([]);
 
-  // Set currentFavorites anytime it's navigated to
+  // Set currentFavorites anytime it's navigated to or a
+  // recipe is unfavorited
   useEffect(() => {
     const read = async () => await favorites.current.readFavorites();
     read();
@@ -26,7 +28,7 @@ const FavoritesBody = () => {
     const values = Object.values(list);
     values.sort((a, b) => a.title.localeCompare(b.title));
     setCurrentFavorites(values);
-  }, [navigation]);
+  }, [navigation, unfavorited]);
 
   return currentFavorites && currentFavorites.length !== 0 ? (
     <FlatList
@@ -34,6 +36,7 @@ const FavoritesBody = () => {
       data={currentFavorites}
       renderItem={({ item }) => {
         if (item.image && item.title) {
+          item.setUnfavorited = setUnfavorited;
           return <RecipeListItem item={item} />;
         }
       }}
